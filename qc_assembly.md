@@ -81,7 +81,7 @@ What does the output tell us about how many reads were trimmed and/or removed en
 Now let's assemble these reads with MEGAHIT:
 
 ```
-megahit -1 tara_reads_R1_trimmed.fastq.gz -2 tara_reads_R2_trimmed.fastq.gz -o tara_assembly
+megahit -1 ~/data/tara_reads_R1_trimmed.fastq.gz -2 ~/data/tara_reads_R2_trimmed.fastq.gz -o tara_assembly
 ```
 
 This should have created a subfolder called `tara_assembly` with the full set of MEGAHIT results in it. The final assembled contigs are contained in a FASTA file called `tara_assembly/final.contigs.fa`. Let's find out how many contigs are in the output. Again we are going to use some bash commands and piping: here we use the command `grep '^>'` on the FASTA file, which looks for any lines having the character `>` at the start of the line (i.e., the sequence header) and pipes that to `wc -l` to count those lines (as we saw earlier). The result is the number of sequences in the FASTA file:

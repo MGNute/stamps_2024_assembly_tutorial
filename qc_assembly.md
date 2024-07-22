@@ -114,3 +114,4 @@ Additional work can be done using `checkm` to explore the quality of the bins we
 - [Another QC tutorial with some other tools](https://gitlab.com/treangenlab/quality_control_tutorial)
 - [Metacompass (Reference-Guided Assembly) Tutorial](https://drive.google.com/file/d/11IDClXFQ-4TknCoeaNfVoL3kXh8yseGf/view)
 - [Sequencing Quality Assessment Tutorial (long version)](https://github.com/treangenlab/radmicrobes/tree/main/session1#sequencing-quality-assessment-and-control)
+- [Squeegee Tutorial](https://gitlab.com/treangenlab/squeegee/-/wikis/Squeegee-Tutorial)

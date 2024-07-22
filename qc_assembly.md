@@ -96,7 +96,7 @@ First we need to get the coverage information for these contigs, which we can do
 ```
 ln -s tara_assembly/final.contigs.fa .
 bowtie2-build final.contigs.fa final.contigs
-bowtie2 -x final.contigs -1 tara_reads_R1_trimmed.fastq.gz -2 tara_reads_R2_trimmed.fastq.gz | samtools view -bS -o tara_to_sort.bam
+bowtie2 -x final.contigs -1 ~/data/tara_reads_R1_trimmed.fastq.gz -2 ~/data/tara_reads_R2_trimmed.fastq.gz | samtools view -bS -o tara_to_sort.bam
 samtools sort tara_to_sort.bam -o tara.bam
 samtools index tara.bam
 ```

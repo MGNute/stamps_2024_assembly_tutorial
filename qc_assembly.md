@@ -66,6 +66,34 @@ $bbmappath/bbduk.sh in1=~/data/tara_reads_R1.fastq.gz in2=~/data/tara_reads_R2.f
 What does the output tell us about how many reads were trimmed and/or removed entirely?
 
 ### Assembly
+Now let's assemble these reads with MEGAHIT:
 
+```
+megahit -1 tara_reads_R1_trimmed.fastq.gz -2 tara_reads_R2_trimmed.fastq.gz -o tara_assembly
+```
 
+This should have created a subfolder called `tara_assembly` with the full set of MEGAHIT results in it. The final assembled contigs are contained in a FASTA file called `tara_assembly/final.contigs.fa`. Let's find out how many contigs are in the output. Again we are going to use some bash commands and piping: here we use the command `grep '^>'` on the FASTA file, which looks for any lines having the character `>` at the start of the line (i.e., the sequence header) and pipes that to `wc -l` to count those lines (as we saw earlier). The result is the number of sequences in the FASTA file:
 
+```
+grep '^>' tara_assembly/final.contigs.fa | wc -l
+```
+
+### Contig Binning
+First we need to get the coverage information for these contigs, which we can do by mapping the reads to the contigs file using `bowtie2` and then counting the reads mapped to each position using `samtools`:
+
+```
+ln -s tara_assembly/final.contigs.fa .
+bowtie2-build final.contigs.fa final.contigs
+bowtie2 -x final.contigs -1 tara_reads_R1_trimmed.fastq.gz -2 tara_reads_R2_trimmed.fastq.gz | samtools view -bS -o tara_to_sort.bam
+samtools sort tara_to_sort.bam -o tara.bam
+samtools index tara.bam
+```
+
+Then we can run MetaBAT on the contigs and coverage to get a set of bins:
+
+```
+runMetaBat.sh -m 1500 final.contigs.fa tara.bam
+mv final.contigs.fa.metabat-bins1500 metabat
+```
+
+Additional work can be done using `checkm` to explore the quality of the bins we have created, although these carry some caveats that are beyond the scope of this tutorial, so we suggest following the commands provided in the [original tutorial](https://www.hadriengourle.com/tutorials/meta_assembly/#checking-the-quality-of-the-bins) (the commands provided there verbatim should work, provided `checkm` is installed).

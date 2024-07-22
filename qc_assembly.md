@@ -1,6 +1,13 @@
 # Metagenome QC & Assembly Tutorial
 This tutorial will walk us through several of the steps required to quality control a metagenomic dataset (including adapter trimming) and assemble the reads into contigs. Much of this tutorial is pulled from [Hadrien Gourle's tutorial site](https://www.hadriengourle.com/tutorials/meta_assembly/) including the particular dataset we will test on. Some of the commands have been changed to reflect the tools we have discussed, but many of the commands are unchanged from that version.
 
+### Installing the software
+According to Mike Lee, the following command will install everything you need for this tutorial in under 1 minute:
+
+```
+conda create -y -n assembly -c conda-forge -c bioconda -c defaults fastqc bbmap megahit metabat2 bowtie2 samtools
+```
+
 ### Getting the Data
 The tutorial linked above uses a dataset that is ideal for this lesson because it is small enough that a metagenome assembly can be run on it to reasonable completeness in a short time. It contains simulated Illumina HiSeq reads from 20 genomes discovered as part of the Tara Oceans Project. Let's get the data:
 
@@ -48,6 +55,8 @@ Open the html file that was created in the results folder. What observations occ
 
 ### Adapter Trimming
 ##### Installing BBMap
+NOTE: Again, according to Mike Lee the conda command at the start of this tutorial should have installed BBmap. However, I don't know for sure where this will place the adapters file so the following commmands will make a local copy of the software that we know will work for this tutorial.
+
 We are going to attempt to install the BBMap tool suite before this tutorial, however if that does not work installation is simple and only requires downloading and extracting the source file from the JGI website. The following commands will do the trick. These commands do the following, in order: 1) Download the latest version from the JGI sourceforge site (which can be found [here](https://sourceforge.net/projects/bbmap/), which is linked to in the [download instructions](https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/installation-guide/)). 2) Extract the tar file. 3) Create a local environment variable noting the directory we have extracted this file to. (Note: installing a software to a project-specific folder like this is a bit sloppy and not a best practice, but it will do for the moment.)
 
 ```

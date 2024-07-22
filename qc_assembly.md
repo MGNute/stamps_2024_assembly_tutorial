@@ -17,8 +17,7 @@ The tutorial linked above uses a dataset that is ideal for this lesson because i
 ```
 mkdir -p ~/data
 cd ~/data
-curl -O -J -L https://osf.io/th9z6/download
-curl -O -J -L https://osf.io/k6vme/download
+cp /opt/shared/assembly-data/tara_reads_R* .
 chmod -w tara_reads_R*
 ```
 

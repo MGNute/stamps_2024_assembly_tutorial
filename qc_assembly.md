@@ -6,6 +6,9 @@ According to Mike Lee, the following command will install everything you need fo
 
 ```
 conda create -y -n assembly -c conda-forge -c bioconda -c defaults fastqc bbmap megahit metabat2 bowtie2 samtools
+
+# Make sure to activate your new environment
+conda activate assembly
 ```
 
 ### Getting the Data

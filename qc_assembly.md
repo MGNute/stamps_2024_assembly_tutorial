@@ -105,7 +105,7 @@ Then we can run MetaBAT on the contigs and coverage to get a set of bins:
 
 ```
 runMetaBat.sh -m 1500 final.contigs.fa tara.bam
-mv final.contigs.fa.metabat-bins1500 metabat
+mv final.contigs.fa.metabat-bins1500* metabat
 ```
 
 Additional work can be done using `checkm` to explore the quality of the bins we have created, although these carry some caveats that are beyond the scope of this tutorial, so we suggest following the commands provided in the [original tutorial](https://www.hadriengourle.com/tutorials/meta_assembly/#checking-the-quality-of-the-bins) (the commands provided there verbatim should work, provided `checkm` is installed).

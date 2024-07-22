@@ -97,3 +97,9 @@ mv final.contigs.fa.metabat-bins1500 metabat
 ```
 
 Additional work can be done using `checkm` to explore the quality of the bins we have created, although these carry some caveats that are beyond the scope of this tutorial, so we suggest following the commands provided in the [original tutorial](https://www.hadriengourle.com/tutorials/meta_assembly/#checking-the-quality-of-the-bins) (the commands provided there verbatim should work, provided `checkm` is installed).
+
+# Additional Resources & Related Tutorials
+
+- [Another QC tutorial with some other tools](https://gitlab.com/treangenlab/quality_control_tutorial)
+- [Metacompass (Reference-Guided Assembly) Tutorial](https://drive.google.com/file/d/11IDClXFQ-4TknCoeaNfVoL3kXh8yseGf/view)
+- [Sequencing Quality Assessment Tutorial (long version)](https://github.com/treangenlab/radmicrobes/tree/main/session1#sequencing-quality-assessment-and-control)

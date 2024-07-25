@@ -25,7 +25,8 @@ tar -xvf mers49.tar.gz
 #### Run parsnp with default parameters 
 
 ```
- parsnp -r ./mers49/England1.fna -d ./mers49 -c
+conda activate parsnp
+parsnp -r ./mers49/England1.fna -d ./mers49 -c
 ```
  
 * Command-line output:

@@ -1,9 +1,4 @@
----
-title: long read 16S emu
-
----
-
-## 16S rRNA microbiome analysis using Emu
+## Full-length and error prone 16S rRNA microbiome analysis using Emu
 
 ### Within the terminal
 
@@ -40,7 +35,7 @@ That's a good start, we'll work on our skills more as we go!
 #### Making our conda env 
 By making a **conda** environment of course!
 
-![conda](/stamps_2024_assembly_tutorial/img/conda.png)
+![conda]((https://github.com/MGNute/stamps_2024_assembly_tutorial/blob/main/img/conda.png)
 
 ```
 # Now make the conda environment
@@ -126,7 +121,7 @@ At around which quality score was this data prefiltered at?
 #### Read filtering and trimming
 There are many options for this step but for long reads use [chopper](https://github.com/wdecoster/chopper) or [filtlong](https://github.com/rrwick/Filtlong) (if you don't know if you still have primers on your reads choose filtlong but most basecalling steps currently remove them)
 
-![mg_coolguy](/stamps_2024_assembly_tutorial/img/mg_coolguy.png)
+![mg_coolguy](https://github.com/MGNute/stamps_2024_assembly_tutorial/blob/main/img/mg_coolguy.png)
 **Mission Impossible Mike**
 
 To use chopper on a single file
@@ -170,7 +165,7 @@ Try repeating the NanoPlot step on these new files to see how the data was affec
 #### Emu classification
 Now we can take the outputs of the chopper step and use these sequences within [emu](https://github.com/treangenlab/emu)!
 
-![emu](/stamps_2024_assembly_tutorial/img/emu.png)
+![emu]((https://github.com/MGNute/stamps_2024_assembly_tutorial/blob/main/img/)emu.png)
 
 Now to install the Emu database 
 ```
@@ -286,3 +281,6 @@ Props to anyone who gets this working
 There is a bit more to do if you want to make trees from this data so we can use UniFrac distances but its on the way.
 
 To give credit where credit is due I used this [cool tool](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) for the ASCII art. 
+
+And I just want to thank my dog for being the best lil guy
+[coopy](https://github.com/MGNute/stamps_2024_assembly_tutorial/blob/main/img/coopy.png)

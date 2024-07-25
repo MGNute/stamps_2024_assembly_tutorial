@@ -151,14 +151,14 @@ Remember that MetaBAT2 is ostensibly a major overhaul of the algorithm for doing
 	
 ### (Optional) Run CheckM2 on Contigs from a Human Gut Sample
 
-I have run MetaBAT2 on one of the assemblies that we talked about in Monday's lectures (and which Titus also talked about by way of comparing MEGAHIT and metaSPAdes assemblies). The folder containing the output of MetaBAT2 has been zipped and uploaded to the server, so first make a copy of it into your local `~/results` folder in a sensibly named subfolder. Note that the first line in the commands below sets another environment variable to the location of the zip file. At the time I'm writing this I don't know where that is going to be, but I am guessing it will be `/opt/shared/assembly-data/PRJNA1049470_SRR27117388_megahit_metabat_out.zip`. So when doing this tutorial live, make sure to update the first line before running!!
+I have run MetaBAT2 on one of the assemblies that we talked about in Monday's lectures (and which Titus also talked about by way of comparing MEGAHIT and metaSPAdes assemblies). The folder containing the output of MetaBAT2 has been zipped and uploaded to the server, so first make a copy of it into your local `~/results` folder in a sensibly named subfolder. Note that the first line in the commands below sets another environment variable to the location of the zip file. (That line has been updated to have to correct location to the zip file, and should work.)
 
 ```
-gut_metabat_zip_location=<zip_file_location_tbd>
+gut_metabat_zip_location=/opt/shared/assembly-data/PRJNA1049470_SRR27117388_megahit_metabat_out.zip
 human_gut=~/results/SRR27117388
 mkdir $human_gut
 cd $human_gut
-cp /home/stamps/binning/PRJNA1049470_SRR27117388_megahit_metabat_out.zip ./
+cp $gut_metabat_zip_location ./
 unzip PRJNA1049470_SRR27117388_megahit_metabat_out.zip
 ```
 

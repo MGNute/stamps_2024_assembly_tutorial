@@ -14,10 +14,10 @@ Let's start by collecting the data that we worked with last time, during the [QC
 2. Running FastQC on the reads
 3. Trimming adapters off the reads using BBduk
 4. Assembled the reads using MEGAHIT
-  * This step created an output file called `final.contigs.fa` which is hopefully still in your folders. 
+	* This step created an output file called `final.contigs.fa` which is hopefully still in your folders. 
 5. Binned the contigs by:
-  a. Mapping reads back to the contigs using a combination of `bowtie2` and `samtools`. This step(s) created an output file called `tara.bam` (Unless you named it something else). That file provided the coverage information needed for binning.
-  b. Running MetaBAT using the script `runMetaBat.sh` on the contigs together with the coverage (`.bam`) file, which created an output folder containing (hopefully) 10 bins, each in a file with the extension `.fa`. If you ran all the commands in the tutorial exactly, those should be in a subfolder called `metabat`.
+	a. Mapping reads back to the contigs using a combination of `bowtie2` and `samtools`. This step(s) created an output file called `tara.bam` (Unless you named it something else). That file provided the coverage information needed for binning.
+	b. Running MetaBAT using the script `runMetaBat.sh` on the contigs together with the coverage (`.bam`) file, which created an output folder containing (hopefully) 10 bins, each in a file with the extension `.fa`. If you ran all the commands in the tutorial exactly, those should be in a subfolder called `metabat`.
 
 Some enterprising students went beyond this and followed the link to the original source material, which involved running CheckM (version 1) on the bins, although this ran into some errors because CheckM-1 is not supported currently.
 

@@ -32,22 +32,23 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -c
 
 ![merscmd](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.cmd1.png?raw=true)
 
-#### Visualize with Gingr: [download](https://harvest.readthedocs.io/en/latest/content/gingr.html)
+#### Visualize with Gingr: 
 
 #### MacOS Install
++ Get your [Gingr download file](https://harvest.readthedocs.io/en/latest/content/gingr.html)
 + Go to your downloads folder and unzip the gingr-OSX64-v1.3.app.zip file (using archive utility)
 + Drag the app file to your applications folder
 + In your applications folder ctrl+click then click open (if this works the bioinfo gods have blessed you today)
-+ 
+	+ If not please let one of us know
 
 ![mers1](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.gingr1.png?raw=true)
 
 #### Configure parameters
 + 95% of the reference is covered by the alignment. This is <100% mainly due to a 1kbp unaligned region from 26kbp to 27kbp.
-+ To force alignment across large collinear regions, use the `-c` maximum distance between two collinear MUMs::
++ To force alignment across large collinear regions, use the `-C` maximum distance between two collinear MUMs::
 
 ```
-parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 -c
+parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000
 ```
 	
 ####  Visualize again with Gingr :download:`GGR <run_mers.gingr2.ggr>`
@@ -61,9 +62,10 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 -c
 ![mers3](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.gingr3.png?raw=true)
  
 #### Inspect Output:
-+ Multiple alignment: :download:`XMFA <runm1.xmfa>` 
-+ SNPs: :download:`VCF <runm1.vcf>`
-+ Phylogeny: :download:`Newick <runm1.tree>`
+##### Download the files from the output `P_2024_07_25_103035784556` and add to Gingr
++ Multiple alignment: `XMFA parsnp.xmfa` 
++ SNPs: `VCF parsnp.vcf`
++ Phylogeny: `Newick parsnp.tree`
 
 ## Example 2: 31 Streptococcus pneumoniae genomes
 
@@ -85,13 +87,13 @@ parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8
 #### 3) Force inclusion of all genomes (-c):
   
 ```
-parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -C
+parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -c
 ```
 
 #### 4) Enable recombination detection/filter (-x):
 
 ```
-parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -C -x
+parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -c -x
 ```
 
 #### 5) Inspect Output:
@@ -101,7 +103,7 @@ parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -C -x
 
 This last step requires you to download software and is to highlight the ability to inspect strain-level differences within genomes assembled from metagenomic samples.
 
-## Use AliView 
+## Use AliView (fuhgeddaboudit)
 
 #### Download AliView:
 

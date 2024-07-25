@@ -3,9 +3,9 @@
 
 This tutorial is to go over how to use ParSNP for strain-level analyses of genomes. The first dataset is a MERS coronavirus outbreak dataset involving 49 isolates. The second dataset is a selected set of 31 Streptococcus pneumoniae genomes. For reference, both of these datasets should run on modestly equipped laptops in a few minutes or less.
 
-### Example 1: 49 MERS Coronavirus genomes
+## Example 1: 49 MERS Coronavirus genomes
 
-##### Download genomes: 
+#### Download genomes: 
 
 First we will pull these genomes from the parsnp Git repository. These genomes are included with the documentation for ParSNP.
 
@@ -16,7 +16,7 @@ wget https://github.com/marbl/harvest/raw/master/docs/content/parsnp/mers49.tar.
 tar -xvf mers49.tar.gz
 ```
 
-##### Run parsnp with default parameters 
+#### Run parsnp with default parameters 
 
  parsnp -r ./mers49/England1.fna -d ./mers49 -c
  

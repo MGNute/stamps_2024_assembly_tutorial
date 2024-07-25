@@ -6,6 +6,27 @@ For this tutorial we are going to be working in the `checkm2` environment in con
 conda activate checkm2
 ```
 
+We also need to install MetaBAT2, although it's possible that it has already been installed, so we will check first. To see if the command `metabat2` is installed in our environment, we can use the `which` command:
+
+```
+which metabat2
+# Should print --> /opt/miniconda3/envs/checkm2/bin/metabat2
+```
+
+If that `which` command doesn't print a path to a `metabat2` file, then we will need to install it. If it does, you can skip the following command:
+
+```
+conda install -c bioconda metabat2
+```
+
+It is possible that that instalation may run into an error (related to libboost, but that's for another day). If it does, you'll have to create a second environment for metabat2 and switch between them as needed:
+
+```
+conda deactivate
+conda create -n metabat2 python=3.9 metabat2
+conda activate metabat2
+```
+
 ### Collecting the Data from Last Time
 
 Let's start by collecting the data that we worked with last time, during the [QC & Assembly](qc_assembly.md) tutorial. If you recall, during that tutorial we went through the following steps:
@@ -78,6 +99,7 @@ Note that the path in that `mkdir` command was a *relative* path rather than an 
 OK, Now we can run CheckM2. (Note that for the steps below where we run MetaBAT2, we will name equivalent folders with `metabat2` instead of just `metabat`.) This command will run CheckM2, which should take a minute or less (roughly):
 
 ```
+conda activate checkm2	# only if you had to make a separate environment above
 checkm2 predict --threads 16 --input $metabat_output -x fa --output-directory metabat_checkm2_output/
 ```
 
@@ -90,6 +112,7 @@ When you open the report, what do you think about these bins? Are they good? Bad
 MetaBAT2 requires that the coverage information be converted to a very specific format first. Fortunately, it comes with a script to do that conversion automatically from a `.bam` file. In the following command, we're first going to set a variable to the path (again, *absolute* path) where want the output file to be located. (Note that this is a path to a file that doesn't yet exist, but that's ok. Feel free to point this to whatever folder and filename you would like.) Then in the second command we are going to refer to that output as well as the variable `$bam_sorted` from earlier:
 
 ```
+conda activate metabat2	# only if you had to make a separate environment above
 depths_output=~/results/tara_depths.txt
 jgi_summarize_bam_contig_depths --outputDepth $depths_output $bam_sorted
 ```
@@ -107,6 +130,7 @@ This is a good example of why making variables is helpful: if we want to re-run 
 ```
 metabat2_checkm2=~/results/metabat2_checkm2_output
 mkdir $metabat2_checkm2
+conda activate checkm2	# only if you had to make a separate environment above
 checkm2 predict --threads 16 --input $metabat2_output -x fa --output-directory $metabat2_checkm2
 ```
 
@@ -142,6 +166,7 @@ echo $human_gut_metabat2
 Now let's make a subfolder for the CheckM2 output and run it on these bins:
 
 ```
+conda activate checkm2	# only if you had to make a separate environment above
 human_gut_checkm2=$human_gut/checkm2_out
 checkm2 predict --threads 16 --input $human_gut_metabat2 -x fa --output-directory $human_gut_checkm2
 ```

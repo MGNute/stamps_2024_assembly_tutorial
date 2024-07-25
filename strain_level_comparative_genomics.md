@@ -32,7 +32,13 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -c
 
 ![merscmd](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.cmd1.png?raw=true)
 
-#### Visualize with Gingr: [download](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.gingr1.ggr)
+#### Visualize with Gingr: [download](https://harvest.readthedocs.io/en/latest/content/gingr.html)
+
+#### MacOS Install
++ Go to your downloads folder and unzip the gingr-OSX64-v1.3.app.zip file (using archive utility)
++ Drag the app file to your applications folder
++ In your applications folder ctrl+click then click open (if this works the bioinfo gods have blessed you today)
++ 
 
 ![mers1](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.gingr1.png?raw=true)
 

@@ -48,7 +48,7 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -c
 + To force alignment across large collinear regions, use the `-C` maximum distance between two collinear MUMs::
 
 ```
-parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 --vcf
+parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000
 ```
 	
 ####  Visualize again with Gingr :download:`GGR <run_mers.gingr2.ggr>`
@@ -64,7 +64,7 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 --vcf
 #### Inspect Output:
 ##### Download the files from the output `P_2024_07_25_some_numbas` and add to Gingr
 + Multiple alignment: `XMFA parsnp.xmfa` 
-+ SNPs: `VCF parsnp.vcf`
++ SNPs: `GGR parsnp.ggr`
 + Phylogeny: `Newick parsnp.tree`
 
 ## Example 2: 31 Streptococcus pneumoniae genomes

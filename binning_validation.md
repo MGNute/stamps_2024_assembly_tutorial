@@ -49,7 +49,7 @@ Let's start by collecting the data that we worked with last time, during the [QC
 
 <details>
 <summary>
-### If you have not run the [QC & Assembly](qc_assembly.md) tutorial... 
+**If you have not run the [QC & Assembly](qc_assembly.md) tutorial...**
 </summary>
 
 below is a set of commands you should be able to run all at once to do it:

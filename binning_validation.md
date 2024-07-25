@@ -48,9 +48,7 @@ Let's start by collecting the data that we worked with last time, during the [QC
 	* Running MetaBAT using the script `runMetaBat.sh` on the contigs together with the coverage (`.bam`) file, which created an output folder containing (hopefully) 10 bins, each in a file with the extension `.fa`. If you ran all the commands in the tutorial exactly, those should be in a subfolder called `metabat`.
 
 <details>
-<summary>
-**If you have not run the [QC & Assembly](qc_assembly.md) tutorial...**
-</summary>
+<summary><b>If you have not run the [QC & Assembly](qc_assembly.md) tutorial... </b></summary>
 
 below is a set of commands you should be able to run all at once to do it:
 

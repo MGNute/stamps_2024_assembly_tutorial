@@ -41,23 +41,23 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -c
 + To force alignment across large collinear regions, use the `-C` maximum distance between two collinear MUMs::
 
 ```
-./parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 -c
+parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 -C
 ```
 	
 ####  Visualize again with Gingr :download:`GGR <run_mers.gingr2.ggr>`
-	+ By adjusting the `-C` parameter, this region is no longer unaligned, boosting the reference coverage to 97%.
++ By adjusting the `-C` parameter, this region is no longer unaligned, boosting the reference coverage to 97%.
 
 ![mers2](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.gingr2.png?raw=true)
 
 ####  Zoom in with Gingr for nucleotide view of region:
-	+ On closer inspection, a large stretch of N's in Jeddah isolate C7569 was the culprit
++ On closer inspection, a large stretch of N's in Jeddah isolate C7569 was the culprit
  
 ![mers3](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.gingr3.png?raw=true)
  
 #### Inspect Output:
-	+ Multiple alignment: :download:`XMFA <runm1.xmfa>` 
-	+ SNPs: :download:`VCF <runm1.vcf>`
-	+ Phylogeny: :download:`Newick <runm1.tree>`
++ Multiple alignment: :download:`XMFA <runm1.xmfa>` 
++ SNPs: :download:`VCF <runm1.vcf>`
++ Phylogeny: :download:`Newick <runm1.tree>`
 
 ## Example 2: 31 Streptococcus pneumoniae genomes
 
@@ -79,13 +79,13 @@ parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8
 #### 3) Force inclusion of all genomes (-c):
   
 ```
-parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -c
+parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -C
 ```
 
 #### 4) Enable recombination detection/filter (-x):
 
 ```
-parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -c -x
+parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -C -x
 ```
 
 #### 5) Inspect Output:

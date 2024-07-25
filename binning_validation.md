@@ -92,7 +92,7 @@ Some enterprising students went beyond this and followed the link to the origina
 We're going to use a Linux shell trick here to make the commands much neater. Specifically, we're going to set some environment variables that contain *absolute* paths to the outputs from the last tutorial. By "absolute" paths, we mean paths that start with either `~/` or with a `/`, so they represent the same folder no matter what directory you might be in when you call them. Here are the commands to set these variables using the absolute paths based on the *default* locations from the last tutorial:
 
 ```
-contigs=~/results/tara_assembly/final.contigs.fa
+contigs=~/results/final.contigs.fa
 bam_unsorted=~/results/tara_to_sort.bam
 bam_sorted=~/results/tara.bam
 metabat_output=~/results/metabat/
@@ -124,7 +124,7 @@ After each one of those you should see the path you gave earlier printed right a
 echo $bam_unsorted
 echo $bam_sorted
 echo $metabat_output
-/home/stamps/results/tara_assembly/final.contigs.fa
+/home/stamps/results/final.contigs.fa
 /home/stamps/results/tara_to_sort.bam
 /home/stamps/results/tara.bam
 /home/stamps/results/metabat/
@@ -193,7 +193,7 @@ conda create -y -n semibin2 -c conda-forge -c bioconda semibin
 conda activate semibin2
 
 # Run semibin2 on the files
-SemiBin2 multi_easy_bin -t 15 -i $contigs -b $bam_sorted --environment ocean -o ~/results/semibin2_output
+SemiBin2 single_easy_bin -t 15 -i $contigs -b $bam_sorted --environment ocean -o ~/results/semibin2_output
 ```
 And now we can compare our new bins with our old bins (from metabat) using the coverm script again. Make sure to change the variable name to the new binner.
 

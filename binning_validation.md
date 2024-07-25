@@ -24,6 +24,8 @@ If that succeeded, you can make sure by testing with the `which` command again:
 which metabat2
 ```
 
+If that printed a path to a `metabat2` file (e.g. `/opt/miniconda3/envs/checkm2/bin/metabat2`), then skip the next step and go right to "Collecting the Data from Last Time"
+
 **NOTE**: It is possible that that instalation may run into an error (related to libboost, but that's for another day). If it does, you'll have to create a second environment for metabat2 and switch between them as needed. As of the 7/25 morning session the command above appears to be working, but in case it doesn't the following will create a separate conda environment for MetaBAT2 that you can switch in and out of below. (See the lines with `# NOTE:` at the start of them.)
 
 ```
@@ -44,6 +46,41 @@ Let's start by collecting the data that we worked with last time, during the [QC
 5. Binned the contigs by:
 	* Mapping reads back to the contigs using a combination of `bowtie2` and `samtools`. This step(s) created an output file called `tara.bam` (Unless you named it something else). That file provided the coverage information needed for binning.
 	* Running MetaBAT using the script `runMetaBat.sh` on the contigs together with the coverage (`.bam`) file, which created an output folder containing (hopefully) 10 bins, each in a file with the extension `.fa`. If you ran all the commands in the tutorial exactly, those should be in a subfolder called `metabat`.
+
+<details>
+<summary>If you have not run the [QC & Assembly](qc_assembly.md) tutorial, below is a set of commands you should be able to run all at once to do it:</summary>
+```
+# 1) Make assembly conda environment:
+conda create -y -n assembly -c conda-forge -c bioconda -c defaults fastqc bbmap megahit metabat2 bowtie2 samtools
+conda activate assembly
+
+# 2) Get the Data:
+mkdir -p ~/data && cd ~/data
+cp /opt/shared/assembly-data/tara_reads_R* .
+chmod -w tara_reads_R*
+
+# 3) Adapter trimming
+mkdir -p ~/results && cd ~/results
+wget https://sourceforge.net/projects/bbmap/files/BBMap_39.08.tar.gz
+tar -xzf BBMap_39.08.tar.gz
+bbmappath=$(pwd)/bbmap
+$bbmappath/bbduk.sh in1=~/data/tara_reads_R1.fastq.gz in2=~/data/tara_reads_R2.fastq.gz out1=~/data/tara_reads_R1_trimmed.fastq.gz out2=~/data/tara_reads_R2_trimmed.fastq.gz ref=$bbmappath/resources/adapters.fa ktrim=r k=23 mink=11 hdist=1 tpe tbo
+
+# 4) Assembly, Contig-Coverage & Binning:
+megahit -1 ~/data/tara_reads_R1_trimmed.fastq.gz -2 ~/data/tara_reads_R2_trimmed.fastq.gz -o tara_assembly
+ln -s tara_assembly/final.contigs.fa .
+# ...coverage:
+bowtie2-build final.contigs.fa final.contigs
+bowtie2 -x final.contigs -1 ~/data/tara_reads_R1_trimmed.fastq.gz -2 ~/data/tara_reads_R2_trimmed.fastq.gz | samtools view -bS -o tara_to_sort.bam
+samtools sort tara_to_sort.bam -o tara.bam
+samtools index tara.bam
+# ...binning:
+runMetaBat.sh -m 1500 final.contigs.fa tara.bam
+mv final.contigs.fa.metabat-bins1500* metabat
+
+# *** DONE ***
+```
+</details>
 
 Some enterprising students went beyond this and followed the link to the original source material, which involved running CheckM (version 1) on the bins, although this ran into some errors because CheckM-1 is not supported currently.
 

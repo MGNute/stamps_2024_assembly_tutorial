@@ -10,14 +10,14 @@ conda activate checkm2
 
 Let's start by collecting the data that we worked with last time, during the [QC & Assembly](qc_assembly.md) tutorial. If you recall, during that tutorial we went through the following steps:
 
-	1. Downloading & Sanity-checking the Raw Reads
-	2. Running FastQC on the reads
-	3. Trimming adapters off the reads using BBduk
-	4. Assembled the reads using MEGAHIT
-		- This step created an output file called `final.contigs.fa` which is hopefully still in your folders. 
-	5. Binned the contigs by:
-		a. Mapping reads back to the contigs using a combination of `bowtie2` and `samtools`. This step(s) created an output file called `tara.bam` (Unless you named it something else). That file provided the coverage information needed for binning.
-		b. Running MetaBAT using the script `runMetaBat.sh` on the contigs together with the coverage (`.bam`) file, which created an output folder containing (hopefully) 10 bins, each in a file with the extension `.fa`. If you ran all the commands in the tutorial exactly, those should be in a subfolder called `metabat`.
+1. Downloading & Sanity-checking the Raw Reads
+2. Running FastQC on the reads
+3. Trimming adapters off the reads using BBduk
+4. Assembled the reads using MEGAHIT
+  * This step created an output file called `final.contigs.fa` which is hopefully still in your folders. 
+5. Binned the contigs by:
+  a. Mapping reads back to the contigs using a combination of `bowtie2` and `samtools`. This step(s) created an output file called `tara.bam` (Unless you named it something else). That file provided the coverage information needed for binning.
+  b. Running MetaBAT using the script `runMetaBat.sh` on the contigs together with the coverage (`.bam`) file, which created an output folder containing (hopefully) 10 bins, each in a file with the extension `.fa`. If you ran all the commands in the tutorial exactly, those should be in a subfolder called `metabat`.
 
 Some enterprising students went beyond this and followed the link to the original source material, which involved running CheckM (version 1) on the bins, although this ran into some errors because CheckM-1 is not supported currently.
 
@@ -113,9 +113,10 @@ checkm2 predict --threads 16 --input $metabat2_output -x fa --output-directory $
 ##### Compare the bins from MetaBAT with MetaBAT2
 
 Remember that MetaBAT2 is ostensibly a major overhaul of the algorithm for doing contig binning. This Tara dataset though is relatively simple, so it's an interesting question to compare results of the old and the new methods on these data 
-	- Is the number of bins the same? (Recall that the data was supposedly sampled from 20 organisms)
-	- Can you tell which bins in the old version are equivalent to which in the new version? Which ones are bigger?
-	- Which version seems to score better on quality metrics like completeness or N50?
+
+* Is the number of bins the same? (Recall that the data was supposedly sampled from 20 organisms)
+* Can you tell which bins in the old version are equivalent to which in the new version? Which ones are bigger?
+* Which version seems to score better on quality metrics like completeness or N50?
 	
 ### (Optional) Run CheckM2 on Contigs from a Human Gut Sample
 

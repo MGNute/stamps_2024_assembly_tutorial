@@ -55,9 +55,9 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 -C
 ![mers3](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.gingr3.png?raw=true)
  
 #### Inspect Output:
-	+ Multiple alignment: :download:`XMFA <runm1.xmfa>` 
-	+ SNPs: :download:`VCF <runm1.vcf>`
-	+ Phylogeny: :download:`Newick <runm1.tree>`
++ Multiple alignment: :download:`XMFA <runm1.xmfa>` 
++ SNPs: :download:`VCF <runm1.vcf>`
++ Phylogeny: :download:`Newick <runm1.tree>`
 
 ## Example 2: 31 Streptococcus pneumoniae genomes
 

@@ -34,7 +34,7 @@ conda create -n metabat2 python=3.9 metabat2
 conda activate metabat2
 ```
 
-### Collecting the Data from Last Time
+## Collecting the Data from Last Time
 
 Let's start by collecting the data that we worked with last time, during the [QC & Assembly](qc_assembly.md) tutorial. If you recall, during that tutorial we went through the following steps:
 
@@ -48,7 +48,7 @@ Let's start by collecting the data that we worked with last time, during the [QC
 	* Running MetaBAT using the script `runMetaBat.sh` on the contigs together with the coverage (`.bam`) file, which created an output folder containing (hopefully) 10 bins, each in a file with the extension `.fa`. If you ran all the commands in the tutorial exactly, those should be in a subfolder called `metabat`.
 
 <details>
-<summary><b>If you have not run the [QC & Assembly](qc_assembly.md) tutorial... </b></summary>
+<summary><b>If you have not run the QC & Assembly tutorial... </b></summary>
 
 below is a set of commands you should be able to run all at once to do it:
 
@@ -87,7 +87,7 @@ mv final.contigs.fa.metabat-bins1500* metabat
 
 Some enterprising students went beyond this and followed the link to the original source material, which involved running CheckM (version 1) on the bins, although this ran into some errors because CheckM-1 is not supported currently.
 
-##### Making Variables to Point to the Outputs
+#### Making Variables to Point to the Outputs
 
 We're going to use a Linux shell trick here to make the commands much neater. Specifically, we're going to set some environment variables that contain *absolute* paths to the outputs from the last tutorial. By "absolute" paths, we mean paths that start with either `~/` or with a `/`, so they represent the same folder no matter what directory you might be in when you call them. Here are the commands to set these variables using the absolute paths based on the *default* locations from the last tutorial:
 
@@ -97,7 +97,8 @@ bam_unsorted=~/results/tara_to_sort.bam
 bam_sorted=~/results/tara.bam
 metabat_output=~/results/metabat/
 ```
-##### If you dont have them at the locations Titus added them to a shared directory
+
+#### If you dont have them at the locations Titus added them to a shared directory
 ```
 mkdir -p ~/results
 cd ~/results
@@ -137,7 +138,7 @@ ls $metabat_output -l
 
 In the remainder of this tutorial, we will refer to these paths using the environment variables we've set here, and we may set and use a few more as well :-)
 
-### Running CheckM2 on the Previous Bins
+## Running CheckM2 on the Previous Bins
 
 First we are going to `cd` into the results folder (or whatever your equivalent was), then we are going to create a folder to hold the CheckM2 output:
 
@@ -160,7 +161,7 @@ After that command is finished running, there should be a couple of files and al
 
 When you open the report, what do you think about these bins? Are they good? Bad? Roughly equal size or highly variable?
 
-### Running MetaBAT2 to Create New Bins
+## Running MetaBAT2 to Create New Bins
 
 MetaBAT2 requires that the coverage information be converted to a very specific format first. Fortunately, it comes with a script to do that conversion automatically from a `.bam` file. In the following command, we're first going to set a variable to the path (again, *absolute* path) where want the output file to be located. (Note that this is a path to a file that doesn't yet exist, but that's ok. Feel free to point this to whatever folder and filename you would like.) Then in the second command we are going to refer to that output as well as the variable `$bam_sorted` from earlier:
 
@@ -189,7 +190,7 @@ mkdir $metabat2_checkm2
 checkm2 predict --threads 16 --input $metabat2_output -x fa --output-directory $metabat2_checkm2
 ```
 
-##### Compare the bins from MetaBAT with MetaBAT2
+#### Compare the bins from MetaBAT with MetaBAT2
 
 Remember that MetaBAT2 is ostensibly a major overhaul of the algorithm for doing contig binning. This Tara dataset though is relatively simple, so it's an interesting question to compare results of the old and the new methods on these data 
 
@@ -197,7 +198,7 @@ Remember that MetaBAT2 is ostensibly a major overhaul of the algorithm for doing
 * Can you tell which bins in the old version are equivalent to which in the new version? Which ones are bigger?
 * Which version seems to score better on quality metrics like completeness or N50?
 	
-### (Optional) Run CheckM2 on Contigs from a Human Gut Sample
+## (Optional) Run CheckM2 on Contigs from a Human Gut Sample
 
 I have run MetaBAT2 on one of the assemblies that we talked about in Monday's lectures (and which Titus also talked about by way of comparing MEGAHIT and metaSPAdes assemblies). The folder containing the output of MetaBAT2 has been zipped and uploaded to the server, so first make a copy of it into your local `~/results` folder in a sensibly named subfolder. Note that the first line in the commands below sets another environment variable to the location of the zip file. (That line has been updated to have to correct location to the zip file, and should work.)
 
@@ -227,7 +228,7 @@ human_gut_checkm2=$human_gut/checkm2_out
 checkm2 predict --threads 16 --input $human_gut_metabat2 -x fa --output-directory $human_gut_checkm2
 ```
 
-### (Double Optional) Run Sourmash on Human Gut Bins
+## (Double Optional) Run Sourmash on Human Gut Bins
 
 This is an exercise for you to figure out how to run Sourmash on these bins. For each bin, you'll want to search the kmer content in that fasta file against GTDB; see [the tutorial section here](https://hackmd.io/9ORFRJGaTOiOdEAY-Aih2A?view#Generating-taxonomic-classifications-for-metagenomes-with-sourmash)). To assign a taxon to that bin, you can use `sourmash tax genome` instead of `tax metagenome`. Here is an incomplete bash script that you could possibly use to automate this:
 

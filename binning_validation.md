@@ -171,7 +171,31 @@ MetaBAT2 requires that the coverage information be converted to a very specific 
 depths_output=~/results/tara_depths.txt
 jgi_summarize_bam_contig_depths --outputDepth $depths_output $bam_sorted
 ```
+If the above code gave you some issues try running a similar analysis using this:
+```
+# Make coverm conda env
+conda create -y -n coverm -c bioconda coverm
 
+# Activate it
+conda activate coverm
+
+# Run coverm on the files
+metabat_depths=~/results/tara__metabat_depths.txt
+coverm genome -t 15 -x .fa --bam-files $bam_sorted --genome-fasta-directory $metabat_output/ -o $metabat_depths
+```
+
+If the jgi_summarize_bam_contig_depths step didn't work then neither will the metabat2 without more debugging than I'm able to right now so lets try this other bin tool instead!
+```
+# Make semibin2 conda env
+conda create -y -n semibin2 -c conda-forge -c bioconda semibin
+
+# Activate it
+conda activate semibin2
+
+# Run coverm on the files
+semibin2_depths=~/results/tara__semibin2_depths.txt
+SemiBin2 multi_easy_bin -i $contigs -b $bam_sorted --environment ocean -o $semibin2_depths
+```
 Now we can run MetaBAT2. First we'll make a specific directory for the output, though we're going to use a variable containing an absolute path this time to do it:
 
 ```

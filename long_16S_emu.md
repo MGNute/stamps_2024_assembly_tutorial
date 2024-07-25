@@ -35,7 +35,7 @@ That's a good start, we'll work on our skills more as we go!
 #### Making our conda env 
 By making a **conda** environment of course!
 
-![conda]((https://github.com/MGNute/stamps_2024_assembly_tutorial/blob/main/img/conda.png)
+![conda](https://github.com/MGNute/stamps_2024_assembly_tutorial/blob/main/img/conda.png)
 
 ```
 # Now make the conda environment
@@ -165,7 +165,7 @@ Try repeating the NanoPlot step on these new files to see how the data was affec
 #### Emu classification
 Now we can take the outputs of the chopper step and use these sequences within [emu](https://github.com/treangenlab/emu)!
 
-![emu]((https://github.com/MGNute/stamps_2024_assembly_tutorial/blob/main/img/)emu.png)
+![emu](https://github.com/MGNute/stamps_2024_assembly_tutorial/blob/main/img/emu.png)
 
 Now to install the Emu database 
 ```
@@ -283,4 +283,4 @@ There is a bit more to do if you want to make trees from this data so we can use
 To give credit where credit is due I used this [cool tool](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) for the ASCII art. 
 
 And I just want to thank my dog for being the best lil guy
-[coopy](https://github.com/MGNute/stamps_2024_assembly_tutorial/blob/main/img/coopy.png)
+![coopy](https://github.com/MGNute/stamps_2024_assembly_tutorial/blob/main/img/coopy.png)

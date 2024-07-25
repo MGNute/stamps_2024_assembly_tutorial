@@ -44,10 +44,10 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -c
 
 #### Configure parameters
 + 95% of the reference is covered by the alignment. This is <100% mainly due to a 1kbp unaligned region from 26kbp to 27kbp.
-+ To force alignment across large collinear regions, use the `-C` maximum distance between two collinear MUMs::
++ To force alignment across large collinear regions, use the `-c` maximum distance between two collinear MUMs::
 
 ```
-parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 -C
+parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 -c
 ```
 	
 ####  Visualize again with Gingr :download:`GGR <run_mers.gingr2.ggr>`

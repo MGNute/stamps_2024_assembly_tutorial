@@ -80,19 +80,19 @@ tar -xvf strep31.tar.gz
 #### 2) Run parsnp:
   
 ```
-parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8
+parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 15
 ```
 
 #### 3) Force inclusion of all genomes (-c):
   
 ```
-parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -c
+parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 15 -c
 ```
 
 #### 4) Enable recombination detection/filter (-x):
 
 ```
-parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 8 -c -x
+parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 15 -c -x
 ```
 
 #### 5) Inspect Output:

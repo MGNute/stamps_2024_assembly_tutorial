@@ -89,12 +89,6 @@ parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 15
 parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 15 -c
 ```
 
-#### 4) Enable recombination detection/filter (-x):
-
-```
-parsnp -r ./strep31/NC_011900.fna -d ./strep31 -p 15 -c -x
-```
-
 #### 5) Inspect Output:
   
  * Multiple alignment: `parsnp.xmfa`

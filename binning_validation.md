@@ -49,6 +49,7 @@ Let's start by collecting the data that we worked with last time, during the [QC
 
 <details>
 <summary>If you have not run the [QC & Assembly](qc_assembly.md) tutorial, below is a set of commands you should be able to run all at once to do it:</summary>
+
 ```
 # 1) Make assembly conda environment:
 conda create -y -n assembly -c conda-forge -c bioconda -c defaults fastqc bbmap megahit metabat2 bowtie2 samtools

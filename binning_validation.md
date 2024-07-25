@@ -16,6 +16,7 @@ Let's start by collecting the data that we worked with last time, during the [QC
 4. Assembled the reads using MEGAHIT
 	* This step created an output file called `final.contigs.fa` which is hopefully still in your folders. 
 5. Binned the contigs by:
+	
 	a. Mapping reads back to the contigs using a combination of `bowtie2` and `samtools`. This step(s) created an output file called `tara.bam` (Unless you named it something else). That file provided the coverage information needed for binning.
 	b. Running MetaBAT using the script `runMetaBat.sh` on the contigs together with the coverage (`.bam`) file, which created an output folder containing (hopefully) 10 bins, each in a file with the extension `.fa`. If you ran all the commands in the tutorial exactly, those should be in a subfolder called `metabat`.
 

@@ -37,8 +37,8 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -c
 ![mers1](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.gingr1.png?raw=true)
 
 #### Configure parameters
-	+ 95% of the reference is covered by the alignment. This is <100% mainly due to a 1kbp unaligned region from 26kbp to 27kbp.
-	+ To force alignment across large collinear regions, use the `-C` maximum distance between two collinear MUMs::
++ 95% of the reference is covered by the alignment. This is <100% mainly due to a 1kbp unaligned region from 26kbp to 27kbp.
++ To force alignment across large collinear regions, use the `-C` maximum distance between two collinear MUMs::
 
 ```
 ./parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 -c

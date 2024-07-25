@@ -173,7 +173,7 @@ checkm2 predict --threads 16 --input $human_gut_metabat2 -x fa --output-director
 
 ### (Double Optional) Run Sourmash on Human Gut Bins
 
-This is an exercise for you to figure out how to run Sourmash on these bins. For each bin, you'll want to search the kmer content in that fasta file against GenBank (as Titus did in real time). To assign a taxon to that bin, it will suffice for now to take the name of the top genome returned by Sourmash. Here is an incomplete bash script that you could possibly use to automate this:
+This is an exercise for you to figure out how to run Sourmash on these bins. For each bin, you'll want to search the kmer content in that fasta file against GTDB; see [the tutorial section here](https://hackmd.io/9ORFRJGaTOiOdEAY-Aih2A?view#Generating-taxonomic-classifications-for-metagenomes-with-sourmash)). To assign a taxon to that bin, you can use `sourmash tax genome` instead of `tax metagenome`. Here is an incomplete bash script that you could possibly use to automate this:
 
 ```
 for fi in $human_gut_metabat2/*.fa

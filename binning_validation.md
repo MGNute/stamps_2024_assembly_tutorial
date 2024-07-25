@@ -52,7 +52,14 @@ bam_unsorted=~/results/tara_to_sort.bam
 bam_sorted=~/results/tara.bam
 metabat_output=~/results/metabat/
 ```
-
+##### If you dont have them at the locations Titus added them to a shared directory
+```
+mkdir -p ~/results
+cd ~/results
+cp /opt/shared/assembly-data/metabat-data/final.contigs.fa .
+cp /opt/shared/assembly-data/metabat-data/tara.bam .
+cp -r /opt/shared/assembly-data/metabat-data/metabat metabat
+```
 If you have saved these in some other folder than `~/results/...`, just change everything after the `=` there to be the absolute path to the location where you saved them. (We don't actually need the path to the unsorted `.bam` file so if you want to omit that one, go ahead.) Note that the last of these is the path to the *folder* containing all of the bins output by MetaBAT, which we renamed in the last tutorial to simply `metabat`. But that folder should have 10 files in it that all end in `.#.fa` where `#` goes from 1 to 10. 
 
 These are now variables that are stored in the shell environment, and you can now refer to the stuff on the right using the names on the left (but always preceded by a `$` character. Let's see how that works by testing them with the `echo` command, which just prints the first argument right back to the console. Run the following:

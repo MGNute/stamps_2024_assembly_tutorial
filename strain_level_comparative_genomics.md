@@ -5,13 +5,18 @@ This tutorial is to go over how to use ParSNP for strain-level analyses of genom
 
 ### Example 1: 49 MERS Coronavirus genomes
 
-* Download genomes: 
- * `mkdir parsnp_demo1`
- * `cd parsnp_demo1`
- * `wget https://github.com/marbl/harvest/raw/master/docs/content/parsnp/mers49.tar.gz` [download](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/mers49.tar.gz)
- * `tar -xvf mers49.tar.gz`
+##### Download genomes: 
 
-* Run parsnp with default parameters 
+First we will pull these genomes from the parsnp Git repository. These genomes are included with the documentation for ParSNP.
+
+```
+mkdir parsnp_demo1`
+cd parsnp_demo1`
+wget https://github.com/marbl/harvest/raw/master/docs/content/parsnp/mers49.tar.gz
+tar -xvf mers49.tar.gz
+```
+
+##### Run parsnp with default parameters 
 
  parsnp -r ./mers49/England1.fna -d ./mers49 -c
  

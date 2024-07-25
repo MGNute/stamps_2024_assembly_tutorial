@@ -62,9 +62,8 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000
 ![mers3](https://github.com/marbl/harvest/raw/master/docs/content/parsnp/run_mers.gingr3.png?raw=true)
  
 #### Inspect Output:
-##### Download the files from the output `P_2024_07_25_some_numbas` and add to Gingr
 + Multiple alignment: `XMFA parsnp.xmfa` 
-+ SNPs: `GGR parsnp.ggr`
++ SNPs: `VCF parsnp.vcf` -- this can be created by adding the --vcf command when running parsnp (not necessary today)
 + Phylogeny: `Newick parsnp.tree`
 
 ## Example 2: 31 Streptococcus pneumoniae genomes

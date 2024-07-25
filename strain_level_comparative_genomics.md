@@ -1,7 +1,13 @@
 # Strain-level analyses with ParSNP (STAMPS 2024)
 
-
 This tutorial is to go over how to use ParSNP for strain-level analyses of genomes. The first dataset is a MERS coronavirus outbreak dataset involving 49 isolates. The second dataset is a selected set of 31 Streptococcus pneumoniae genomes. For reference, both of these datasets should run on modestly equipped laptops in a few minutes or less.	
+
+Before starting, you will need to activate the `parsnp` conda environment and double check that `parsnp` is installed:
+
+```
+conda activate parsnp
+which parsnp
+```
 
 ## Example 1: 49 MERS Coronavirus genomes
 

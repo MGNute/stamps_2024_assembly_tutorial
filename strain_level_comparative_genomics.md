@@ -48,7 +48,7 @@ parsnp -r ./mers49/England1.fna -d ./mers49 -c
 + To force alignment across large collinear regions, use the `-C` maximum distance between two collinear MUMs::
 
 ```
-parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000
+parsnp -r ./mers49/England1.fna -d ./mers49 -C 2000 --vcf
 ```
 	
 ####  Visualize again with Gingr :download:`GGR <run_mers.gingr2.ggr>`

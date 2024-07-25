@@ -10,8 +10,8 @@ This tutorial is to go over how to use ParSNP for strain-level analyses of genom
 First we will pull these genomes from the parsnp Git repository. These genomes are included with the documentation for ParSNP.
 
 ```
-mkdir parsnp_demo1`
-cd parsnp_demo1`
+mkdir parsnp_demo1
+cd parsnp_demo1
 wget https://github.com/marbl/harvest/raw/master/docs/content/parsnp/mers49.tar.gz
 tar -xvf mers49.tar.gz
 ```

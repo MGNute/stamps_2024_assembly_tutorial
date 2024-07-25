@@ -193,9 +193,10 @@ conda create -y -n semibin2 -c conda-forge -c bioconda semibin
 conda activate semibin2
 
 # Run semibin2 on the files
-semibin2_depths=~/results/tara__semibin2_depths.txt
-SemiBin2 multi_easy_bin -t 15 -i $contigs -b $bam_sorted --environment ocean -o $semibin2_depths
+SemiBin2 multi_easy_bin -t 15 -i $contigs -b $bam_sorted --environment ocean -o ~/results/semibin2_output
 ```
+And now we can compare our new bins with our old bins (from metabat) using the coverm script again. Make sure to change the variable name to the new binner.
+
 Now we can run MetaBAT2. First we'll make a specific directory for the output, though we're going to use a variable containing an absolute path this time to do it:
 
 ```
